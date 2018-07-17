@@ -29,5 +29,8 @@
     "grunt-env": "^0.4.4",
     "grunt-mocha-test": "^0.13.3",
     "mocha": "^5.2.0"
+  },
+  "publishConfig": {
+    "registry": "http://10.10.69.203:8081/repository/npm-private/"
   }
 }
