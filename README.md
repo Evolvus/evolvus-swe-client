@@ -26,7 +26,7 @@ Please see the full [Contributors Graph](https://github.com/evolvus/evolvus-swe-
 Feel free to reach out to any of the core contributors with your questions or
 concerns.
 
-[Kavya](https://github.com/KmKavya)
+[Kamalarani](https://github.com/Kamalarani)
 
 ## License
 (The MIT License)
