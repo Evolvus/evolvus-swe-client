@@ -16,23 +16,37 @@ describe('testing index.js', () => {
     flowCode: "flow",
     createdBy: "KamalaraniP"
   };
+  // var id;
+  // id = savedObj._id;
+
+  let sweEventObject = {
+    "tenantId": "IVL",
+    "wfEntity": "Role",
+    "wfEntityAction": "create",
+    "query": "5b4f2ab570b1da7bbf936b52",
+    "createdBy": "KamalaraniP"
+  };
   let invalidsweEvent = {
 
     flowCode: "flow",
     createdBy: "KamalaraniP"
   };
 
-  describe("testing with sweSetup objects", () => {
+  describe("testing with sweEvent objects", () => {
     beforeEach((done) => {
-      process.env.SWE_URL = "http://localhost:3000/api/setup";
+      process.env.SWE_URL = "http://localhost:3000/api/swe/initialize";
       done();
     });
 
     it('should save valid object to database', (done) => {
-      var res = index.postToSWE(sweSetupObject);
+      var res = index.initialize(sweEventObject);
+      // expect(res)
+      //   .to.be.eventually.have.property("wfEntity")
+      //   .to.include("Role")
+      //   .notify(done);
       expect(res)
         .to.be.eventually.have.property('data')
-        .to.include(sweSetupObject)
+        .to.include(sweEventObject)
         .notify(done);
     });
 
