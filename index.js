@@ -23,11 +23,23 @@ module.exports.initialize = (sweEventObject) => {
         resolve(response.data);
       }).catch((error) => {
         debug(`Error:${error} and failed to store is`, sweEventObject);
+        let response = {
+          data: {
+            wfInstanceId: null,
+            wfInstanceStatus: "RE_PROCESS"
+          }
+        };
         resolve(error);
       });
     } catch (error) {
       debug(`caught exception ${error} and failed to store is`, sweEventObject);
-      resolve(error);
+      let response = {
+        data: {
+          wfInstanceId: null,
+          wfInstanceStatus: "RE_PROCESS"
+        }
+      };
+      resolve(response);
     }
   });
 };
